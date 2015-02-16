@@ -89,6 +89,8 @@ public class Random_Shapes_01
 			}
 			*/
 		}
+		
+
 
 		public void run()
 		{
@@ -112,13 +114,17 @@ public class Random_Shapes_01
 				
 			g2d.setColor(Color.black);
 			g2dOutput.setColor(Color.black);
-			
+			Hind hind = new Hind();
+
 			Torso torso = new Torso();
 			torso.setPosition(new Point(width/2, height/2));
+			g2d.drawLine(width/2, height/2, width/2 + 200, height/2);
 			torso.draw(g2d);
-			Hind hind = new Hind();
 			hind.setPosition(new Point(width/2 + 200, height/2));
 			hind.draw(g2d);
+			
+			
+			
 			
 			
 			
