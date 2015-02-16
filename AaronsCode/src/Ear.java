@@ -1,8 +1,8 @@
-package cat;
+
 
 import java.awt.Graphics2D;
 
-public class Ear implements Drawable 
+public class Ear extends Drawable 
 {
 
 	public Ear(Head head) 

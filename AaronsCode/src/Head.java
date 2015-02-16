@@ -1,23 +1,23 @@
-package cat;
+
 
 import java.awt.Graphics2D;
 
 import javax.swing.JComponent;
 
-public class Head implements Drawable
+public class Head extends Drawable
 {
 	private static Ear ear1;
 	private static Ear ear2;
-	public Head(Neck n)
+	private static int radius;
+	public Head()
 	{
-		ear1 = new Ear(this);
-		ear2 = new Ear(this);
+		radius = random.nextInt(30)+30;
 	}
 
 	@Override
-	public void draw(Graphics2D g) 
+	public void draw(Graphics2D g2d) 
 	{
-		
+		g2d.drawOval((int)(position.getX() - radius), (int)(position.getY() - radius), radius*2, radius*2);
 	}
 	
 }
