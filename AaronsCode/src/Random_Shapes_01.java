@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -111,40 +112,45 @@ public class Random_Shapes_01
 				
 			g2d.setColor(Color.black);
 			g2dOutput.setColor(Color.black);
-			while(draw)
-			{
-				int x1 = (int) Math.floor(Math.random() * width);
-				int y1 = (int) Math.floor(Math.random() * height);
-				
-				int x2 = (int) Math.floor(Math.random() * width);
-				int y2 = (int) Math.floor(Math.random() * height);
-				
-				if( Math.random() < 0.3 )
-				{
-					g2d.drawOval(x1, y1, x2, y2);
-					g2dOutput.drawOval(x1, y1, x2, y2);
-				}
-				else if( Math.random() < 0.3 )
-				{
-					g2d.drawRect(x1, y1, x2, y2);
-					g2dOutput.drawRect(x1, y1, x2, y2);
-				}
-				else
-				{
-					g2d.drawLine(x1, y1, x2, y2);
-					g2dOutput.drawLine(x1, y1, x2, y2);
-				}
-				
-				try
-				{
-					Thread.sleep(250);
-				}
-				catch (InterruptedException e)
-				{
-					//e.printStackTrace();
-					System.out.println("InterruptedException: Sleep interrupted...");
-				}
-			}
+			
+			Torso torso = new Torso();
+			torso.setPosition(new Point(width/2, height/2));
+			torso.draw(g2d);
+			
+//			while(draw)
+//			{
+//				int x1 = (int) Math.floor(Math.random() * width);
+//				int y1 = (int) Math.floor(Math.random() * height);
+//				
+//				int x2 = (int) Math.floor(Math.random() * width);
+//				int y2 = (int) Math.floor(Math.random() * height);
+//				
+//				if( Math.random() < 0.3 )
+//				{
+//					g2d.drawOval(x1, y1, x2, y2);
+//					g2dOutput.drawOval(x1, y1, x2, y2);
+//				}
+//				else if( Math.random() < 0.3 )
+//				{
+//					g2d.drawRect(x1, y1, x2, y2);
+//					g2dOutput.drawRect(x1, y1, x2, y2);
+//				}
+//				else
+//				{
+//					g2d.drawLine(x1, y1, x2, y2);
+//					g2dOutput.drawLine(x1, y1, x2, y2);
+//				}
+//				
+//				try
+//				{
+//					Thread.sleep(250);
+//				}
+//				catch (InterruptedException e)
+//				{
+//					//e.printStackTrace();
+//					System.out.println("InterruptedException: Sleep interrupted...");
+//				}
+//			}
 		}
 		
 		public void save(String filename)
