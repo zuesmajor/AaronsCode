@@ -7,7 +7,7 @@ public class Torso extends Drawable {
 	int radius;
 	
 	public Torso() {
-		radius = random.nextInt(30)+30;
+		radius = random.nextInt(10);
 	}
 	
 	@Override
