@@ -2,7 +2,6 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
@@ -112,11 +111,6 @@ public class Random_Shapes_01
 				
 			g2d.setColor(Color.black);
 			g2dOutput.setColor(Color.black);
-			
-			Torso torso = new Torso();
-			torso.setPosition(new Point(width/2, height/2));
-			torso.draw(g2d);
-			
 //			while(draw)
 //			{
 //				int x1 = (int) Math.floor(Math.random() * width);
