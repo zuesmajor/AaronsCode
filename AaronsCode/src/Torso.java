@@ -59,5 +59,10 @@ public class Torso extends Drawable {
 		neck.setPosition(CalculateNeckPosition());
 		neck.draw(g2d);
 	}
-
+	
+	/*public void drawBack(Graphics2D g2d){
+		g2d.setColor(color);
+		g2d.drawLine((int)neck.position.getX(), (int)neck.position.getY(), (int)hind.position.getX(), (int)hind.position.getY());
+	}*/
+	
 }
