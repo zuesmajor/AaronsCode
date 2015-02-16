@@ -37,5 +37,4 @@ public class Torso extends Drawable {
 	}
 	
 	
-	
 }
