@@ -41,4 +41,7 @@ public class Torso extends Drawable {
 		frontLeg2.setPosition(CalculateLegPosition());
 		frontLeg2.draw(g2d);
 	}
+	
+	
+	
 }
