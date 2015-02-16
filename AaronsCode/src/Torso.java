@@ -10,6 +10,7 @@ public class Torso extends Drawable {
 	
 	Leg frontLeg1 = new Leg();
 	Leg frontLeg2 = new Leg();
+	Neck neck = new Neck();
 	
 	public Torso() {
 		radius = random.nextInt(30)+30;
@@ -29,6 +30,20 @@ public class Torso extends Drawable {
 		return point;
 	}
 	
+	public Point2D CalculateNeckPosition() 
+	{
+		Point2D point = new Point();
+
+		int angle = random.nextInt(90);
+		
+		point.setLocation(
+				(int)(position.getX() + Math.cos((double)(angle + 180)/180*Math.PI) * radius),
+				(int)(position.getY() + Math.sin((double)(angle + 180)/180*Math.PI) * radius)
+		);
+		
+		return point;
+	}
+
 	@Override
 	public void draw(Graphics2D g2d) {
 		g2d.setColor(color);
@@ -40,8 +55,9 @@ public class Torso extends Drawable {
 
 		frontLeg2.setPosition(CalculateLegPosition());
 		frontLeg2.draw(g2d);
+		
+		neck.setPosition(CalculateNeckPosition());
+		neck.draw(g2d);
 	}
-	
-	
-	
+
 }

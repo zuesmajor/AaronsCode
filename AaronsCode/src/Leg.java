@@ -27,6 +27,7 @@ public class Leg extends Drawable {
 
 		g2d.setColor(color);
 		g2d.setStroke(new BasicStroke(footWidth));
+
 		g2d.drawLine(
 				(int)(position.getX()),
 				(int)(position.getY()),
@@ -40,6 +41,7 @@ public class Leg extends Drawable {
 				(int)(legEndX + Math.cos((double)(angle + 75 + 90)/180*Math.PI) * footLength),
 				(int)(legEndY + Math.sin((double)(angle + 75 + 90)/180*Math.PI) * footLength)
 		);
+
 		g2d.setColor(Color.black);
 	}
 }
