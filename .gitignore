@@ -1,0 +1,6 @@
+*.index
+*.class
+.metadata/
+.metadata/*
+.recommenders/
+.recommenders/*
