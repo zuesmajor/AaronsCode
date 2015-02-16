@@ -1,0 +1,22 @@
+import java.awt.Graphics2D;
+import java.awt.Point;
+import java.awt.geom.Point2D;
+
+
+public class Torso extends Drawable {
+	int radius;
+	Leg frontLeg1 = new Leg();
+	Leg frontLeg2 = new Leg();
+	
+	public Torso() {
+		radius = random.nextInt(30)+30;
+		
+		frontLeg1.setPosition(position);
+	}
+	
+	@Override
+	public void draw(Graphics2D g2d) {
+		frontLeg1.draw(g2d);
+		g2d.drawOval((int)(position.getX() - radius), (int)(position.getY() - radius), radius*2, radius*2);
+	}
+}

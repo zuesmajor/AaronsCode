@@ -39,3 +39,9 @@ java.nio.channels.OverlappingFileLockException
 	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex.access$0(TaskListIndex.java:1065)
 	at org.eclipse.mylyn.internal.tasks.index.core.TaskListIndex$MaintainIndexJob.run(TaskListIndex.java:171)
 	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2015-02-16 10:28:34.598
+!MESSAGE Failed to write tracking file /Volumes/SuperNova/School/Spring2015/CS185C/AaronsCode/.recommenders/repository/http___download_eclipse_org_recommenders_models_luna_/org/eclipse/recommenders/index/0.0.0-SNAPSHOT/resolver-status.properties
+
+!ENTRY org.eclipse.recommenders.models.rcp 1 0 2015-02-16 10:28:34.802
+!MESSAGE org.eclipse.recommenders:index::zip:0.0.0 could not be resolved from model repositories. Are you offline?

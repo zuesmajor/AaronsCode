@@ -29,10 +29,7 @@ public class Torso extends Drawable {
 	public void draw(Graphics2D g2d) {
 		g2d.drawOval((int)(position.getX() - radius), (int)(position.getY() - radius), radius*2, radius*2);
 
-		frontLeg1.setPosition(CalculateLegPosition());
+		frontLeg1.setPosition(position);
 		frontLeg1.draw(g2d);
-
-		frontLeg2.setPosition(CalculateLegPosition());
-		frontLeg2.draw(g2d);
 	}
 }
