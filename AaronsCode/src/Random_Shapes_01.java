@@ -121,6 +121,8 @@ public class Random_Shapes_01
 			hind.draw(g2d);
 			
 			
+			
+			
 //			while(draw)
 //			{
 //				int x1 = (int) Math.floor(Math.random() * width);
