@@ -1,3 +1,4 @@
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.geom.Point2D;
@@ -7,9 +8,12 @@ public class Hind extends Drawable {
 	int radius;
 	Leg frontLeg1 = new Leg();
 	Leg frontLeg2 = new Leg();
+	Color color;
 	
 	public Hind() {
 		radius = random.nextInt(30)+30;
+		color = new Color(random.nextInt(150), random.nextInt(150), random.nextInt(150));
+
 	}
 	
 	public Point2D CalculateLegPosition() {
@@ -27,6 +31,11 @@ public class Hind extends Drawable {
 	
 	@Override
 	public void draw(Graphics2D g2d) {
+		
+		g2d.setColor(color);
+		g2d.fillOval((int)(position.getX() - radius), (int)(position.getY() - radius), radius*2, radius*2);
+		g2d.setColor(Color.black);
+		
 		g2d.drawOval((int)(position.getX() - radius), (int)(position.getY() - radius), radius*2, radius*2);
 
 		frontLeg1.setPosition(CalculateLegPosition());
@@ -36,5 +45,5 @@ public class Hind extends Drawable {
 		frontLeg2.draw(g2d);
 	}
 	
-	
 }
+	
