@@ -116,6 +116,10 @@ public class Random_Shapes_01
 			Torso torso = new Torso();
 			torso.setPosition(new Point(width/2, height/2));
 			torso.draw(g2d);
+			Hind hind = new Hind();
+			hind.setPosition(new Point(width/2 + 200, height/2));
+			hind.draw(g2d);
+			
 			
 //			while(draw)
 //			{
