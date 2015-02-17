@@ -50,6 +50,7 @@ public class Hind extends Drawable {
 
 		frontLeg2.setPosition(CalculateLegPosition());
 		g2d.drawLine((int)(position.getX() + radius), (int)(position.getY()), 900, angle);
+		g2d.drawLine(900, angle, 960, angle/2);
 		frontLeg2.draw(g2d);
 	}
 	
