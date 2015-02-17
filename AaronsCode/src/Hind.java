@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.geom.Point2D;
+import java.util.Random;
 
 
 public class Hind extends Drawable {
@@ -9,10 +10,13 @@ public class Hind extends Drawable {
 	Leg frontLeg1 = new Leg();
 	Leg frontLeg2 = new Leg();
 	Color color;
+	int length;
 	
 	public Hind() {
 		radius = random.nextInt(30)+30;
+		length = random.nextInt(20);
 		color = new Color(random.nextInt(150), random.nextInt(150), random.nextInt(150));
+		
 
 	}
 	
@@ -40,8 +44,12 @@ public class Hind extends Drawable {
 
 		frontLeg1.setPosition(CalculateLegPosition());
 		frontLeg1.draw(g2d);
+		
+		Random random = new Random();
+		int angle = random.nextInt(250-180)+180;
 
 		frontLeg2.setPosition(CalculateLegPosition());
+		g2d.drawLine((int)(position.getX() + radius), (int)(position.getY()), 900, angle);
 		frontLeg2.draw(g2d);
 	}
 	
