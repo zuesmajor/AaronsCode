@@ -122,11 +122,7 @@ public class Random_Shapes_01
 			torso.draw(g2d);
 			hind.setPosition(new Point(width/2 + 200, height/2));
 			hind.draw(g2d);
-			
-			
-			
-			
-			
+	
 			
 			
 //			while(draw)
