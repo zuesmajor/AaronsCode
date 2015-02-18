@@ -8,8 +8,8 @@ import java.awt.geom.Point2D;
 
 public class Head extends Drawable
 {
-	private static Ear ear1;
-	private static Ear ear2;
+	private static Ear ear1 = new Ear();
+	private static Ear ear2 = new Ear();
 	private static int radius;
 	private static Color color;
 	
@@ -69,6 +69,7 @@ public class Head extends Drawable
 	
 	public Head()
 	{
+		color = new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
 		radius = random.nextInt(30)+30;
 
 		eye1Angle = random.nextInt(30);
@@ -114,10 +115,21 @@ public class Head extends Drawable
 		);
 		return point;
 	}
+
+	Point2D CalculateEarPosition() 
+	{
+		Point2D point = new Point();
+	
+		double legEndX = (position.getX()) ;
+		double legEndY = (position.getY() - radius/7) ;
+		point.setLocation(legEndX+20, legEndY+40);
+		return point;
+	}
 	
 	@Override
 	public void draw(Graphics2D g2d) 
 	{
+		g2d.setColor(color);
 		g2d.drawOval((int)(position.getX() - radius), (int)(position.getY() - radius), radius*2, radius*2);
 		g2d.fillOval((int)(position.getX() - radius), (int)(position.getY() - radius), radius*2, radius*2);
 		g2d.setColor(Color.red);
@@ -130,6 +142,15 @@ public class Head extends Drawable
 		
 		mouth.setPosition(calculateMouthPosition());
 		mouth.draw(g2d);
+		
+
+		ear1.setPosition(CalculateEarPosition());
+		ear1.draw(g2d);
+		
+		Point p = new Point();
+		p.setLocation(position.getX() - radius/8, position.getY() - radius/7+40);
+		ear2.setPosition(p);
+		ear2.draw(g2d);
 
 		g2d.setColor(Color.black);
 		g2d.setFont(new Font("Arial", Font.BOLD, 30));
