@@ -106,27 +106,25 @@ public class Random_Shapes_01
 				
 
 
-			// fill the background to start
-			g2d.setColor(Color.white);
-			g2d.fillRect(0, 0, width, height);
-			g2dOutput.setColor(Color.white);
-			g2dOutput.fillRect(0, 0, width, height);
-				
-			g2d.setColor(Color.black);
-			g2dOutput.setColor(Color.black);
-			Hind hind = new Hind();
+			
+			
+			while(draw)
+			{
 
-			Torso torso = new Torso();
-			torso.setPosition(new Point(width/2, height/2));
-			g2d.drawLine(width/2, height/2, width/2 + 200, height/2);
-			torso.draw(g2d);
-			hind.setPosition(new Point(width/2 + 200, height/2));
-			hind.draw(g2d);
-	
-			
-			
-//			while(draw)
-//			{
+				// fill the background to start
+				g2d.setColor(Color.white);
+				g2d.fillRect(0, 0, width, height);
+				g2dOutput.setColor(Color.white);
+				g2dOutput.fillRect(0, 0, width, height);
+					
+				g2d.setColor(Color.black);
+				g2dOutput.setColor(Color.black);
+
+				Torso torso = new Torso();
+				torso.setPosition(new Point(width/2, height/2));
+				torso.draw(g2d);
+		
+				
 //				int x1 = (int) Math.floor(Math.random() * width);
 //				int y1 = (int) Math.floor(Math.random() * height);
 //				
@@ -149,16 +147,16 @@ public class Random_Shapes_01
 //					g2dOutput.drawLine(x1, y1, x2, y2);
 //				}
 //				
-//				try
-//				{
-//					Thread.sleep(250);
-//				}
-//				catch (InterruptedException e)
-//				{
-//					//e.printStackTrace();
-//					System.out.println("InterruptedException: Sleep interrupted...");
-//				}
-//			}
+				try
+				{
+					Thread.sleep(250);
+				}
+				catch (InterruptedException e)
+				{
+					//e.printStackTrace();
+					System.out.println("InterruptedException: Sleep interrupted...");
+				}
+			}
 		}
 		
 		public void save(String filename)

@@ -20,8 +20,6 @@ public class Leg extends Drawable {
 	
 	@Override
 	public void draw(Graphics2D g2d) {
-		System.out.println(position);
-		
 		double legEndX = position.getX() + Math.cos((double)(angle + 75)/180*Math.PI) * length;
 		double legEndY = position.getY() + Math.sin((double)(angle + 75)/180*Math.PI) * length;
 
