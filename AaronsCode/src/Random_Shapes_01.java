@@ -31,7 +31,7 @@ public class Random_Shapes_01
 	
 	public void gui()
 	{
-		myWindow = new JFrame("Random Shapes 01");
+		myWindow = new JFrame("Random Four-Legged Animal");
 		myWindow.setSize(1200, 600);
 		myWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
@@ -46,19 +46,19 @@ public class Random_Shapes_01
 		 btnStart.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e)
 			{
-				draw = !draw;
-				if( draw )
-				{
-					btnStart.setText("Stop");
+//				draw = !draw;
+//				if( draw )
+//				{
+//					btnStart.setText("Stop");
 					drawThread = new Thread(rs);
 					drawThread.start();
-				}
-				else
-				{
-					btnStart.setText("Start");
-					drawThread.interrupt();
-					rs.save("Random_Shapes_01_Output.png");
-				}
+//				}
+//				else
+//				{
+//					btnStart.setText("Start");
+//					drawThread.interrupt();
+//					rs.save("Random_Shapes_01_Output.png");
+//				}
 			}
 		 });
 		 
@@ -108,8 +108,8 @@ public class Random_Shapes_01
 
 			
 			
-			while(draw)
-			{
+//			while(draw)
+//			{
 
 				// fill the background to start
 				g2d.setColor(Color.white);
@@ -147,16 +147,16 @@ public class Random_Shapes_01
 //					g2dOutput.drawLine(x1, y1, x2, y2);
 //				}
 //				
-				try
-				{
-					Thread.sleep(250);
-				}
-				catch (InterruptedException e)
-				{
-					//e.printStackTrace();
-					System.out.println("InterruptedException: Sleep interrupted...");
-				}
-			}
+//				try
+//				{
+//					Thread.sleep(250);
+//				}
+//				catch (InterruptedException e)
+//				{
+//					//e.printStackTrace();
+//					System.out.println("InterruptedException: Sleep interrupted...");
+//				}
+//			}
 		}
 		
 		public void save(String filename)
