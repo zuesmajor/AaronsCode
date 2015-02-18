@@ -2,6 +2,6 @@
 *.class
 .metadata/
 .metadata/*
-.recommenders/
+.recommenders/*
 .recommenders/*
 .DS_store
