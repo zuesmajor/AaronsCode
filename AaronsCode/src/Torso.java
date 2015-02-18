@@ -7,7 +7,8 @@ import java.awt.geom.Point2D;
 public class Torso extends Drawable {
 	int radius;
 	Color color;
-	
+
+	Hind hind = new Hind();
 	Leg frontLeg1 = new Leg();
 	Leg frontLeg2 = new Leg();
 	Neck neck = new Neck();
@@ -43,6 +44,20 @@ public class Torso extends Drawable {
 		
 		return point;
 	}
+	
+	public Point2D CalculateHindPosition()
+	{
+		Point2D point = new Point();
+
+		int angle = random.nextInt(30);
+		
+		point.setLocation(
+				(int)(position.getX() + Math.cos((double)(angle + -15)/180*Math.PI) * radius),
+				(int)(position.getY() + Math.sin((double)(angle + -15)/180*Math.PI) * radius)
+		);
+		
+		return point;
+	}
 
 	@Override
 	public void draw(Graphics2D g2d) {
@@ -58,6 +73,9 @@ public class Torso extends Drawable {
 		
 		neck.setPosition(CalculateNeckPosition());
 		neck.draw(g2d);
+
+		hind.setPosition(CalculateHindPosition());
+		hind.draw(g2d);
 	}
 	
 
