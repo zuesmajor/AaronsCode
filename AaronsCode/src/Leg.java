@@ -6,13 +6,15 @@ import java.awt.Graphics2D;
 public class Leg extends Drawable {
 	int angle;
 	int length;
+	int length2;
 	int footLength;
 	float footWidth;
 	Color color;
 
 	public Leg() {
 		angle = random.nextInt(30);
-		length = random.nextInt(100)+50;
+		length = random.nextInt(50)+25;
+		length2 = random.nextInt(50)+25;
 		footLength = random.nextInt(50)+20;
 		footWidth = random.nextFloat()*5.0f + 1.0f;
 		color = new Color(random.nextInt(255), random.nextInt(255), random.nextInt(255));
@@ -32,12 +34,22 @@ public class Leg extends Drawable {
 				(int)(legEndX),
 				(int)(legEndY)
 		);
-		
+
+		double legEndX2 = legEndX + Math.cos((double)(angle + 75 - 20)/180*Math.PI) * length2;
+		double legEndY2 = legEndY + Math.sin((double)(angle + 75 - 20)/180*Math.PI) * length2;
+
 		g2d.drawLine(
 				(int)(legEndX),
 				(int)(legEndY),
-				(int)(legEndX + Math.cos((double)(angle + 75 + 90)/180*Math.PI) * footLength),
-				(int)(legEndY + Math.sin((double)(angle + 75 + 90)/180*Math.PI) * footLength)
+				(int)(legEndX2),
+				(int)(legEndY2)
+		);
+
+		g2d.drawLine(
+				(int)(legEndX2),
+				(int)(legEndY2),
+				(int)(legEndX2 + Math.cos((double)(angle + 75 + 90)/180*Math.PI) * footLength),
+				(int)(legEndY2 + Math.sin((double)(angle + 75 + 90)/180*Math.PI) * footLength)
 		);
 
 		g2d.setColor(Color.black);

@@ -18,6 +18,9 @@ public class Hind extends Drawable {
 	int backThickness;
 	Color backColor;
 	
+	// tail
+	float tailAngles[] = new float[10];
+	
 	public Hind() {
 		radius = random.nextInt(30)+30;
 		length = random.nextInt(20);
@@ -25,8 +28,16 @@ public class Hind extends Drawable {
 		backColor = new Color(random.nextInt(150), random.nextInt(150), random.nextInt(150));
 		
 //		backAngle = random.nextInt(30);
-		backThickness = random.nextInt(20) + 1;
+		backThickness = random.nextInt(100) + 1;
 		backLength = random.nextInt(150) + 20;
+
+		for (int i = 0; i < tailAngles.length/2; i++) {
+			tailAngles[i] = random.nextInt(180-90);
+		}
+		
+		for (int i = tailAngles.length/2; i < tailAngles.length; i++) {
+			tailAngles[i] = random.nextInt(360);
+		}
 	}
 	
 	public Point2D CalculateLegPosition() {
@@ -58,12 +69,26 @@ public class Hind extends Drawable {
 		frontLeg1.setPosition(CalculateLegPosition());
 		frontLeg1.draw(g2d);
 		
-		Random random = new Random();
-		int angle = random.nextInt(250-180)+180;
+//		Random random = new Random();
+//		int angle = random.nextInt(250-180)+180;
 
 		frontLeg2.setPosition(CalculateLegPosition());
-		g2d.drawLine((int)(position.getX() + radius + backLength), (int)(position.getY()), 900, angle);
-		g2d.drawLine(900, angle, 960, angle/2);
+//		g2d.drawLine((int)(position.getX() + radius + backLength), (int)(position.getY()), 900, angle);
+//		g2d.drawLine(900, angle, 960, angle/2);
+		int lastTailX = (int)(position.getX() + radius + backLength);
+		int lastTailY = (int)(position.getY());
+		for (int i = 0; i < tailAngles.length; i++) {
+			int nextTailX = (int) (lastTailX + Math.cos(tailAngles[i]/180*Math.PI) * 10);
+			int nextTailY = (int) (lastTailY + Math.sin(tailAngles[i]/180*Math.PI) * 10);
+			g2d.drawLine(
+					lastTailX,
+					lastTailY,
+					nextTailX,
+					nextTailY
+					);
+			lastTailX = nextTailX;
+			lastTailY = nextTailY;
+		}
 		frontLeg2.draw(g2d);
 
 	}
