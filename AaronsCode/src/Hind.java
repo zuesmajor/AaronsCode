@@ -28,7 +28,7 @@ public class Hind extends Drawable {
 		backColor = new Color(random.nextInt(150), random.nextInt(150), random.nextInt(150));
 		
 //		backAngle = random.nextInt(30);
-		backThickness = random.nextInt(100) + 1;
+		backThickness = random.nextInt(radius) + 1;
 		backLength = random.nextInt(150) + 20;
 
 		for (int i = 0; i < tailAngles.length/2; i++) {
